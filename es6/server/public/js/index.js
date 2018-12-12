@@ -53,7 +53,33 @@
 
 	'use strict';
 
-	__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./class/lesson1\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	__webpack_require__(2);
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	// ES5 new一个正则对象
+	{
+	    var regex = new RegExp('xyz', 'i');
+	    var regex2 = new RegExp(/xyz/i);
+	    console.log(regex.test('xyz123'), regex2.test('xyz123')); // true true
+	    //  ES6中第二个修饰符i 会覆盖第一个修饰符 ig
+	    var regex3 = new RegExp(/xyz/ig, 'i');
+	    console.log(regex3.flags); //flags用于获取修饰符
+	}
+
+	// y修饰符
+	{
+	    var s = 'bbb_bb_b';
+	    var a1 = /b+/g;
+	    var a2 = new RegExp('b+', 'y');
+
+	    console.log("one", a1.exec(s), a2.exec(s));
+	    console.log("two", a1.exec(s), a2.exec(s));
+	}
 
 /***/ })
 /******/ ]);
